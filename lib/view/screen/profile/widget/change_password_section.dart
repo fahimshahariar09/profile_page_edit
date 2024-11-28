@@ -1,20 +1,14 @@
-import 'package:classic_ecommerce/controller/ui_controller/profile.dart';
-import 'package:classic_ecommerce/utils/app_colors.dart';
-import 'package:classic_ecommerce/utils/common_function/common_snackbar_message.dart';
-import 'package:classic_ecommerce/utils/common_function/internet_connection_checker.dart';
-import 'package:classic_ecommerce/view/common_widget/custom_button.dart';
-import 'package:classic_ecommerce/view/common_widget/custom_loading_button.dart';
-import 'package:classic_ecommerce/view/common_widget/custom_text.dart';
-import 'package:classic_ecommerce/view/screen/profile/widget/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:profile/utlis/theme/app_colors.dart';
+import 'package:profile/view/screen/profile/widget/custom_text_field.dart';
 
 class ChangePasswordSection extends StatelessWidget {
   const ChangePasswordSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ProfileController profileController = Get.put(ProfileController());
+    //ProfileController profileController = Get.put(ProfileController());
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom, right: 10, left: 10, top: 20),
       child: SingleChildScrollView(
