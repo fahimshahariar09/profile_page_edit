@@ -5,6 +5,12 @@ class CommonButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card();
+    return Card(
+      child: SizedBox(
+        height: 50,
+        width: MediaQuery.sizeOf(context).width,
+        child: Text("data"),
+      ),
+    );
   }
 }
