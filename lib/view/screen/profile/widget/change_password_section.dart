@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:profile/utlis/theme/app_colors.dart';
+import 'package:profile/view/common_widget/custom_text_widget.dart';
 import 'package:profile/view/screen/profile/widget/custom_text_field.dart';
 
 class ChangePasswordSection extends StatelessWidget {
@@ -25,7 +26,7 @@ class ChangePasswordSection extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   CustomTextWidget(
-                    text: "change_password".tr,
+                    text: "change_password",
                     fontSize: 22,
                     fontWeight: FontWeight.w500,
                     fontColor: AppColors.bg1LightColor,
