@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.6
   connectivity_plus: ^6.0.1
   flutter_easyloading:
+  flutter_secure_storage: ^9.2.2
 
 dev_dependencies:
   flutter_test:
