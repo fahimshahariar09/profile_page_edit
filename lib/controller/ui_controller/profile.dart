@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:profile/controller/api_controller/auth/change_password.dart';
 import 'package:profile/controller/api_controller/profile_update.dart';
 import 'package:profile/controller/local_storage/local_storage.dart';
 import 'package:profile/utlis/common_funcation/common_snackbar_message.dart';
@@ -30,7 +31,7 @@ class ProfileController extends GetxController {
 
   @override
   void onInit() {
-    AppData.appLanguage == "EN" ? languageBN.value = true : languageBN.value = false;
+    // AppData.appLanguage == "EN" ? languageBN.value = true : languageBN.value = false;
     getProfileInfo();
     super.onInit();
   }
@@ -48,19 +49,23 @@ class ProfileController extends GetxController {
   getImage({required ImageSource imageSource}) async {
     var status = await Permission.camera.request();
     if (status.isGranted) {
-      final pickedFile = await picker.pickImage(source: imageSource, imageQuality: 25);
+      final pickedFile =
+          await picker.pickImage(source: imageSource, imageQuality: 25);
       if (pickedFile != null) {
         profileIMG.value = File(pickedFile.path);
       }
     } else {
-      CommonSnackBarMessage.errorMessage(text: "Gallery or Camera Permission are Denied");
+      CommonSnackBarMessage.errorMessage(
+          text: "Gallery or Camera Permission are Denied");
     }
   }
 
   Future<bool> changePasswordService() async {
     isLoading.value = true;
     bool status = await ChangePasswordService.changePasswordService(
-        currentPass: oldPasswordController.text, newPassword: newPasswordController.text, confPassword: confPasswordController.text);
+        currentPass: oldPasswordController.text,
+        newPassword: newPasswordController.text,
+        confPassword: confPasswordController.text);
     isLoading.value = false;
     return status;
   }
@@ -75,7 +80,9 @@ class ProfileController extends GetxController {
   Future<bool> profileUpdateService() async {
     isLoading.value = true;
     bool status = await ProfileUpdateService.profileUpdateService(
-        name: nameController.text, address: addressController.text, image: File(profileIMG.value?.path ?? ""));
+        name: nameController.text,
+        address: addressController.text,
+        image: File(profileIMG.value?.path ?? ""));
     isLoading.value = false;
     return status;
   }
