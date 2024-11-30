@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:profile/controller/api_controller/profile_update.dart';
 import 'package:profile/controller/local_storage/local_storage.dart';
 import 'package:profile/utlis/common_funcation/common_snackbar_message.dart';
