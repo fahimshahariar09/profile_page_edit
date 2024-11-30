@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:profile/utlis/theme/app_colors.dart';
-import 'package:profile/view/common_widget/custom_text_widget.dart';
+import 'package:profile/view/common_widget/custom_text.dart';
 
 class CustomSwitch extends StatelessWidget {
   const CustomSwitch({

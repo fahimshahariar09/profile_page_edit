@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:profile/controller/ui_controller/profile.dart';
+import 'package:profile/utlis/common_funcation/common_snackbar_message.dart';
+import 'package:profile/utlis/common_funcation/internet_connection_checkout.dart';
 import 'package:profile/utlis/theme/app_colors.dart';
-import 'package:profile/view/common_widget/custom_text_widget.dart';
+import 'package:profile/view/common_widget/custom_text.dart';
 import 'package:profile/view/screen/profile/widget/custom_text_field.dart';
 
 class ChangePasswordSection extends StatelessWidget {
@@ -9,7 +12,7 @@ class ChangePasswordSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //ProfileController profileController = Get.put(ProfileController());
+    ProfileController profileController = Get.put(ProfileController());
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom, right: 10, left: 10, top: 20),
       child: SingleChildScrollView(
