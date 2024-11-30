@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:profile/controller/local_storage/local_storage.dart';
 
 class ProfileUpdateService {
   static Future<bool> profileUpdateService({required String name, required String address, required File image}) async {
@@ -10,7 +11,7 @@ class ProfileUpdateService {
 
       var data = {
         "id": 4,
-        "name": name,
+        "name": "fahim",
         "username": null,
         "email": "classic@gmail.com",
         "phone": "01705021098",
