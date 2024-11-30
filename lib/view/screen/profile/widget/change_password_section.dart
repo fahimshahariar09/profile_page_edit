@@ -4,6 +4,8 @@ import 'package:profile/controller/ui_controller/profile.dart';
 import 'package:profile/utlis/common_funcation/common_snackbar_message.dart';
 import 'package:profile/utlis/common_funcation/internet_connection_checkout.dart';
 import 'package:profile/utlis/theme/app_colors.dart';
+import 'package:profile/view/common_widget/custom_button.dart';
+import 'package:profile/view/common_widget/custom_loading_button.dart';
 import 'package:profile/view/common_widget/custom_text.dart';
 import 'package:profile/view/screen/profile/widget/custom_text_field.dart';
 

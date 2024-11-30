@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:classic_ecommerce/controller/local_storage/local_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
