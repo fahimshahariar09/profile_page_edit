@@ -6,6 +6,17 @@ class ProfileSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column();
+    return SizedBox(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
