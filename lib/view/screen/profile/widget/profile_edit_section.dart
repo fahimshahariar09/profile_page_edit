@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:profile/controller/ui_controller/profile.dart';
 import 'package:profile/view/common_widget/custom_text.dart';
 
@@ -23,6 +25,20 @@ class ProfileEditSection extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
                 SizedBox(height: 10),
+                InkWell(
+                  onTap: (){
+                    profileController.getImage(imageSource: ImageSource.gallery);
+                  },
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundColor: Colors.grey,
+                        backgroundImage: profileController.profileIMG.value==null ? NetworkImage("${profileController.userInfo["profilr_image"]?? ""}") :,
+                      )
+                    ],
+                  ),
+                )
               ],
             )
           ],
