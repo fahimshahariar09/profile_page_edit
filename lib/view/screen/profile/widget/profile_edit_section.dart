@@ -17,7 +17,12 @@ class ProfileEditSection extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CustomTextWidget(text: "profile edit",fontSize: 20,fontWeight: FontWeight.w500,)
+                CustomTextWidget(
+                  text: "profile edit",
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
+                SizedBox(height: 10),
               ],
             )
           ],
