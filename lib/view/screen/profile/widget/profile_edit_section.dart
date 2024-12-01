@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,16 +28,24 @@ class ProfileEditSection extends StatelessWidget {
                 ),
                 SizedBox(height: 10),
                 InkWell(
-                  onTap: (){
-                    profileController.getImage(imageSource: ImageSource.gallery);
+                  onTap: () {
+                    profileController.getImage(
+                        imageSource: ImageSource.gallery);
                   },
                   child: Column(
                     children: [
                       CircleAvatar(
                         radius: 40,
                         backgroundColor: Colors.grey,
-                        backgroundImage: profileController.profileIMG.value==null ? NetworkImage("${profileController.userInfo["profilr_image"]?? ""}") :,
-                      )
+                        backgroundImage: profileController.profileIMG.value ==
+                                null
+                            ? NetworkImage(
+                                "${profileController.userInfo["profile_image"] ?? ""}")
+                            : FileImage(File(
+                                    profileController.profileIMG.value!.path))
+                                as ImageProvider,
+                      ),
+                      CustomTextWidget(text: "Tap to change image",fontSize: 11,),
                     ],
                   ),
                 )
