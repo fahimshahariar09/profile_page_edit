@@ -73,6 +73,12 @@ class ProfileEditSection extends StatelessWidget {
                       FocusScope.of(context).unfocus();
                       if(!await ConnectionChecker.checkConnection()){
                         CommonSnackBarMessage.noInternetConnection();
+                        return;
+                      }
+                      bool status = await profileController.profileUpdateService();
+                      if(status){
+                        await profileController.getProfileInfo();
+                        Get.back();
                       }
                     })
               ],
