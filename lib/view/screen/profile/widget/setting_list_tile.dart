@@ -13,14 +13,14 @@ class SettingListTile extends StatelessWidget {
       onTap: onTap,
       child: Card(
         surfaceTintColor: Colors.transparent,
-        shape: OutlineInputBorder(borderSide: BorderSide.none),
+        shape: const OutlineInputBorder(borderSide: BorderSide.none),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CustomTextWidget(
               text: titel,
             ),
-            Icon(
+            const Icon(
               Icons.arrow_forward_ios_sharp,
               size: 17,
             ),
