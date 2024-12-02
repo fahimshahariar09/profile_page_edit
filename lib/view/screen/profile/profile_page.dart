@@ -3,11 +3,12 @@ import 'package:get/get.dart';
 import 'package:profile/controller/ui_controller/profile.dart';
 import 'package:profile/utlis/theme/app_colors.dart';
 import 'package:profile/view/common_widget/custom_text.dart';
+import 'package:profile/view/common_widget/image_view_widget.dart';
 import 'package:profile/view/screen/profile/widget/profile_edit_section.dart';
 import 'package:profile/view/screen/profile/widget/profile_section.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class Profile extends StatelessWidget {
                           onTap: () {
                             Get.to(
                                   () => ImageViewWidget(
-                                imgUrl: "${profileController.userInfo['Profile_image'] ?? ""}",
+                                imageurl: "${profileController.userInfo['Profile_image'] ?? ""}",
                               ),
                             );
                           },
