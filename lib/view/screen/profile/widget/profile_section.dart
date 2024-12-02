@@ -65,8 +65,8 @@ class ProfileSection extends StatelessWidget {
                 ),
               ),
               //logout
-              LogOut(onTap: ()async{
-               // buildLogOutDialog();
+              LogOut(onTap: () async {
+                buildLogOutDialog();
               })
             ],
           ),
@@ -75,9 +75,17 @@ class ProfileSection extends StatelessWidget {
     );
   }
 
-  Future<dynamic> buildLogOutDialog(){
-    return Get.defaultDialog();
+  Future<dynamic> buildLogOutDialog() {
+    return Get.defaultDialog(
+        title: "Confirmation",
+        titleStyle: const TextStyle(fontSize: 20, fontFamily: "RobotoSerif"),
+        content: const CustomTextWidget(
+          text: "Do you want to log out?",
+          fontSize: 16,
+        ));
   }
+
+  //sizedbox
 
   SizedBox buildSizedBox({double? height, double? width}) => SizedBox(
         height: height,
