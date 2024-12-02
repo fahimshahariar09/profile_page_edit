@@ -82,7 +82,31 @@ class ProfileSection extends StatelessWidget {
         content: const CustomTextWidget(
           text: "Do you want to log out?",
           fontSize: 16,
-        ));
+        ),
+        actions: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              InkWell(
+                onTap: () {
+                  Get.back();
+                },
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  margin: const EdgeInsets.symmetric(vertical: 5),
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const CustomTextWidget(
+                    text: 'Cancel',
+                    fontColor: Colors.white,
+                  ),
+                ),
+              )
+            ],
+          )
+        ]);
   }
 
   //sizedbox
