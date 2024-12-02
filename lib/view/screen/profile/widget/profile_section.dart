@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:profile/controller/ui_controller/profile.dart';
+import 'package:profile/view/common_widget/custom_text.dart';
 import 'package:profile/view/screen/profile/widget/change_password_section.dart';
+import 'package:profile/view/screen/profile/widget/custom_switch.dart';
 import 'package:profile/view/screen/profile/widget/setting_list_tile.dart';
 
 class ProfileSection extends StatelessWidget {
@@ -7,6 +11,7 @@ class ProfileSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProfileController profileController = Get.put(ProfileController());
     return SizedBox(
       child: SingleChildScrollView(
         child: Padding(
@@ -28,8 +33,23 @@ class ProfileSection extends StatelessWidget {
               Card(
                 elevation: .4,
                 surfaceTintColor: Colors.transparent,
-                shape: OutlineInputBorder(borderSide: BorderSide.none),
-                child: Row(),
+                shape: const OutlineInputBorder(borderSide: BorderSide.none),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                      child: CustomTextWidget(text: "Language change"),
+                    ),
+                    CustomSwitch(
+                      onTap: () {},
+                      onText: 'EN',
+                      offText: 'BN',
+                      value: profileController.languageBN,
+                    )
+                  ],
+                ),
               )
             ],
           ),
