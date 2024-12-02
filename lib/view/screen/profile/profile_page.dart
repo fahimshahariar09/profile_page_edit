@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:profile/controller/ui_controller/profile.dart';
 import 'package:profile/utlis/theme/app_colors.dart';
 import 'package:profile/view/common_widget/custom_text.dart';
+import 'package:profile/view/screen/profile/widget/profile_edit_section.dart';
+import 'package:profile/view/screen/profile/widget/profile_section.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
