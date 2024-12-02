@@ -11,7 +11,9 @@ class ProfileSection extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              buildSizedBox(),
+              buildSizedBox(height: 5),
+              //change password
+             // SettingLis
             ],
           ),
         ),
