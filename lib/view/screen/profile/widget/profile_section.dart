@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:profile/controller/local_storage/local_storage.dart';
 import 'package:profile/controller/ui_controller/profile.dart';
 import 'package:profile/view/common_widget/custom_text.dart';
 import 'package:profile/view/screen/profile/widget/change_password_section.dart';
@@ -43,7 +44,18 @@ class ProfileSection extends StatelessWidget {
                       child: CustomTextWidget(text: "Language change"),
                     ),
                     CustomSwitch(
-                      onTap: () {},
+                      onTap: () {
+                        profileController.languageBN.value
+                            ? Get.updateLocale(const Locale('en', 'US'))
+                            : Get.updateLocale(const Locale('bn', 'BD'));
+                        profileController.languageBN.value
+                            ? LocalData()
+                                .writeData(key: 'languageType', value: 'EN')
+                            : LocalData()
+                                .writeData(key: 'languageType', value: 'BN');
+                        profileController.languageBN.value =
+                            !profileController.languageBN.value;
+                      },
                       onText: 'EN',
                       offText: 'BN',
                       value: profileController.languageBN,
