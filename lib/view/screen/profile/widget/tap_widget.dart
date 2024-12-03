@@ -1,19 +1,25 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:profile/utlis/theme/app_colors.dart';
 
 class TapWidget extends StatelessWidget {
-  const TapWidget({super.key, required this.onTap});
+  const TapWidget(
+      {super.key,
+      required this.onTap,
+      this.value,
+      required this.selectedIndex});
 
-
+  final int selectedIndex;
   final VoidCallback onTap;
+  final dynamic value;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Card(
-        color: AppColors.bg1LightColor,
+        color: value.value == selectedIndex
+            ? AppColors.bgLightColor
+            : AppColors.bg1LightColor,
       ),
     );
   }
