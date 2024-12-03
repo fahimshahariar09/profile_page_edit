@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:profile/controller/api_controller/auth/log_out.dart';
 import 'package:profile/controller/local_storage/local_storage.dart';
 import 'package:profile/controller/ui_controller/profile.dart';
 import 'package:profile/view/common_widget/custom_text.dart';
@@ -106,7 +107,12 @@ class ProfileSection extends StatelessWidget {
               ),
               InkWell(
                 onTap: ()async{
-                  var status = await 
+                  var status = await LogOutService.logoutService();
+                  if(status){
+                    await LocalData().deleteData(key: "userInfo");
+                    await LocalData().deleteData(key: "token");
+                    Get.offAll(()=>SignI)
+                  }
                 },
               )
             ],
