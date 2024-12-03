@@ -20,6 +20,18 @@ class TapWidget extends StatelessWidget {
         color: value.value == selectedIndex
             ? AppColors.bgLightColor
             : AppColors.bg1LightColor,
+        margin: EdgeInsets.zero,
+        child: SizedBox(
+          height: 400,
+          width: 300,
+          child: Center(
+            child: Row(
+              children: [
+
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
