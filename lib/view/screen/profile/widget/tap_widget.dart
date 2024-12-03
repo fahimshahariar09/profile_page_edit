@@ -26,8 +26,12 @@ class TapWidget extends StatelessWidget {
           width: 300,
           child: Center(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-
+                value.value == selectedIndex
+                    ? const Icon(Icons.check_box_rounded,
+                        size: 20, color: AppColors.bg1LightColor)
+                    : const SizedBox(),
               ],
             ),
           ),
