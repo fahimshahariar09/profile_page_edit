@@ -67,9 +67,12 @@ class ProfileSection extends StatelessWidget {
                 ),
               ),
               //logout
-              LogOut(onTap: () async {
-                buildLogOutDialog();
-              })
+              LogOut(
+                onTap: () async {
+                  buildLogOutDialog();
+                },
+              ),
+              buildSizedBox(height: 10),
             ],
           ),
         ),
@@ -117,8 +120,10 @@ class ProfileSection extends StatelessWidget {
                   }
                 },
                 child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   decoration: BoxDecoration(
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(5),
