@@ -8,6 +8,7 @@ import 'package:profile/view/screen/profile/widget/change_password_section.dart'
 import 'package:profile/view/screen/profile/widget/custom_switch.dart';
 import 'package:profile/view/screen/profile/widget/log_out.dart';
 import 'package:profile/view/screen/profile/widget/setting_list_tile.dart';
+import 'package:profile/view/screen/welcome_page.dart';
 
 class ProfileSection extends StatelessWidget {
   const ProfileSection({super.key});
@@ -111,9 +112,13 @@ class ProfileSection extends StatelessWidget {
                   if(status){
                     await LocalData().deleteData(key: "userInfo");
                     await LocalData().deleteData(key: "token");
-                    Get.offAll(()=>SignI)
+                    Get.offAll(()=>WelcomePage());
                   }
                 },
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 10,vertical: 7),
+                  padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+                ),
               )
             ],
           )
