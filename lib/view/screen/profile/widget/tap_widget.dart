@@ -39,7 +39,14 @@ class TapWidget extends StatelessWidget {
                         size: 20, color: AppColors.bg1LightColor)
                     : const SizedBox(),
                 SizedBox(width: 5),
-                Flexible(child: CustomTextWidget(text: titel))
+                Flexible(
+                  child: CustomTextWidget(
+                      text: titel,
+                      fontColor: value.value == selectedIndex
+                          ? AppColors.bg2LightColor
+                          : AppColors.bg1LightColor,
+                      fontSize: value.value == selectedIndex ? 18 : 15),
+                )
               ],
             ),
           ),
