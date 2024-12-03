@@ -94,7 +94,8 @@ class ProfileSection extends StatelessWidget {
                   Get.back();
                 },
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                   margin: const EdgeInsets.symmetric(vertical: 5),
                   decoration: BoxDecoration(
                     color: Colors.grey,
@@ -107,17 +108,25 @@ class ProfileSection extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: ()async{
+                onTap: () async {
                   var status = await LogOutService.logoutService();
-                  if(status){
+                  if (status) {
                     await LocalData().deleteData(key: "userInfo");
                     await LocalData().deleteData(key: "token");
-                    Get.offAll(()=>WelcomePage());
+                    Get.offAll(() => const WelcomePage());
                   }
                 },
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10,vertical: 7),
-                  padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+                  margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: const CustomTextWidget(
+                    text: 'Lou Out',
+                    fontColor: Colors.white,
+                  ),
                 ),
               )
             ],
