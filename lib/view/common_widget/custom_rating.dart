@@ -22,10 +22,19 @@ class CustomRating extends StatelessWidget {
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: ratingCount,
-                itemBuilder: (context,index){
-                  return const Icon(Icons.star,size: 11,color: Colors.orange,);
+                itemBuilder: (context, index) {
+                  return const Icon(
+                    Icons.star,
+                    size: 11,
+                    color: Colors.orange,
+                  );
                 }),
           ),
+          SizedBox(
+            width: (5 - ratingCount * 12),
+            height: 20,
+            child: ListView.builder(itemBuilder: (context,index){}),
+          )
         ],
       ),
     );
