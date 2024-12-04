@@ -7,18 +7,16 @@ class CustomRating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    int ratingCount =0;
-    if()
-
+    int ratingCount = 0;
+    if (ratingStar > 5) {
+      ratingCount = 0;
+    } else {
+      ratingCount = ratingStar;
+    }
 
     return SingleChildScrollView(
       child: Row(
-        children: [
-          SizedBox(
-
-          )
-        ],
+        children: [SizedBox()],
       ),
     );
   }
