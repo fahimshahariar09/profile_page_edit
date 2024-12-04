@@ -5,6 +5,17 @@ class CustomRefreshButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      height: 60,
+      width: MediaQuery.sizeOf(context).width,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+          color: Colors.transparent, borderRadius: BorderRadius.circular(10)),
+      child: InkWell(
+        onTap: refreshButton,
+        child: Icon(Icons.refresh),
+
+      ),
+    );
   }
 }
