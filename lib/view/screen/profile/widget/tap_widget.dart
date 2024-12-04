@@ -26,7 +26,7 @@ class TapWidget extends StatelessWidget {
         margin: EdgeInsets.zero,
         shape: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
-            borderSide: BorderSide(color: Colors.transparent)),
+            borderSide: const BorderSide(color: Colors.transparent)),
         child: SizedBox(
           height: 400,
           width: 300,
@@ -38,7 +38,7 @@ class TapWidget extends StatelessWidget {
                     ? const Icon(Icons.check_box_rounded,
                         size: 20, color: AppColors.bg1LightColor)
                     : const SizedBox(),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 Flexible(
                   child: CustomTextWidget(
                       text: titel,
