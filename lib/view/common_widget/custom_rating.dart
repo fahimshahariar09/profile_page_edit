@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class CustomRating extends StatelessWidget {
   const CustomRating({super.key, required this.ratingStar});
@@ -13,10 +13,20 @@ class CustomRating extends StatelessWidget {
     } else {
       ratingCount = ratingStar;
     }
-
     return SingleChildScrollView(
       child: Row(
-        children: [SizedBox()],
+        children: [
+          SizedBox(
+            width: ratingCount * 11,
+            height: 20,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: ratingCount,
+                itemBuilder: (context,index){
+                  return const Icon(Icons.star,size: 11,color: Colors.orange,);
+                }),
+          ),
+        ],
       ),
     );
   }
