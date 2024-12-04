@@ -23,13 +23,14 @@ class CustomRefreshButton extends StatelessWidget {
       width: width ?? MediaQuery.sizeOf(context).width,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          color: Colors.transparent, borderRadius: BorderRadius.circular(10)),
+          color: containerColor ?? Colors.transparent,
+          borderRadius: BorderRadius.circular(10)),
       child: InkWell(
         onTap: refreshButton,
         child: Icon(
           Icons.refresh,
           size: 50,
-          color: AppColors.bg1LightColor,
+          color: iconColor ?? AppColors.bg1LightColor,
         ),
       ),
     );
